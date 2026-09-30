@@ -1,0 +1,32 @@
+{
+  "name": "Suraksha AR",
+  "short_name": "Suraksha AR",
+  "description": "AR-Based Industrial Safety Training",
+  "id": "/SurakshaAR/",
+  "start_url": "/SurakshaAR/",
+  "scope": "/SurakshaAR/",
+  "display": "standalone",
+  "background_color": "#F7F5F1",
+  "theme_color": "#E05A00",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "./icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./logo.png",
+      "type": "image/png",
+      "sizes": "572x638",
+      "purpose": "any"
+    }
+  ]
+}

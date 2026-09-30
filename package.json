@@ -1,0 +1,43 @@
+{
+  "name": "surakshaar",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && node -e \"import('node:fs').then(fs => fs.copyFileSync('dist/index.html', 'dist/404.html'))\"",
+    "preview": "vite preview",
+    "server": "node server/chatServer.js",
+    "lint": "oxlint src"
+  },
+  "dependencies": {
+    "@capacitor/android": "^8.5.2",
+    "@capacitor/assets": "^3.0.5",
+    "@capacitor/cli": "^7.6.9",
+    "@capacitor/core": "^8.5.2",
+    "@capacitor/ios": "^8.5.2",
+    "@react-three/drei": "^10.7.8",
+    "@react-three/fiber": "^9.7.0",
+    "@react-three/xr": "^6.6.30",
+    "@supabase/supabase-js": "^2.109.0",
+    "@tanstack/react-query": "^5.102.8",
+    "html-to-image": "^1.11.11",
+    "idb": "^8.0.3",
+    "jspdf": "^2.5.2",
+    "lucide-react": "^0.469.0",
+    "qrcode.react": "^4.2.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.28.0",
+    "recharts": "^2.15.3",
+    "three": "^0.170.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "@vitejs/plugin-react": "^4.3.4",
+    "oxlint": "^0.16.6",
+    "typescript": "~5.4.5",
+    "vite": "^5.4.19"
+  }
+}
