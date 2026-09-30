@@ -1808,3 +1808,79 @@ function delay(ms) {
 
 // Re-export helpers for use in other modules if needed
 export { load, save, uuid, DEMO_SCENARIOS, DEMO_QUESTIONS }
+
+// ─── Industrial Trade & Role Module Mappings (SIH Requirement 11) ──────────
+export const ROLE_MODULE_MAPPINGS = [
+  {
+    id: 'electrician',
+    label: 'Electrician',
+    label_hi: 'इलेक्ट्रीशियन',
+    label_sat: 'ᱤᱞᱮᱠᱴᱨᱤᱥᱤᱭᱟᱱ',
+    icon: '⚡',
+    description: 'Electrical isolation, arc-flash boundaries, and CO2 fire suppression',
+    required_module_ids: [
+      'a1b2c3d4-0001-0001-0001-000000000001', // Fire & Explosion
+      'a1b2c3d4-0003-0003-0003-000000000003', // Machinery & Nip-Point
+    ],
+  },
+  {
+    id: 'welder',
+    label: 'Welder',
+    label_hi: 'वेल्डर',
+    label_sat: 'ᱣᱮᱞᱰᱟᱨ',
+    icon: '🔥',
+    description: 'Hot work permit, flash protection, flammable gas purge, and fire watch',
+    required_module_ids: [
+      'a1b2c3d4-0001-0001-0001-000000000001',
+      'a1b2c3d4-0002-0002-0002-000000000002',
+    ],
+  },
+  {
+    id: 'confined_space',
+    label: 'Confined Space Entrant',
+    label_hi: 'सीमित स्थान प्रवेशक',
+    label_sat: 'ᱥᱟᱸᱜᱷᱟᱨ ᱴᱷᱟᱶ ᱵᱚᱞᱚᱱᱤᱡ',
+    icon: '🕳️',
+    description: 'Atmospheric multi-gas monitoring, SCBA donning, forced air, and tripods',
+    required_module_ids: [
+      'a1b2c3d4-0002-0002-0002-000000000002',
+      'a1b2c3d4-0001-0001-0001-000000000001',
+    ],
+  },
+  {
+    id: 'supervisor',
+    label: 'Safety Supervisor',
+    label_hi: 'सुरक्षा पर्यवेक्षक',
+    label_sat: 'ᱥᱩᱨᱠᱷᱟ ᱥᱩᱯᱚᱨᱵᱷᱟᱭᱤᱡᱚᱨ',
+    icon: '📋',
+    description: 'Comprehensive DGMS MVT 1966 compliance across all industrial safety domains',
+    required_module_ids: [
+      'a1b2c3d4-0001-0001-0001-000000000001',
+      'a1b2c3d4-0002-0002-0002-000000000002',
+      'a1b2c3d4-0003-0003-0003-000000000003',
+    ],
+  },
+]
+
+export const MISTAKE_HEATMAP_DATA = [
+  { step: '0. Hazard Recognition', errorRate: 8, severity: 'low', topic: 'Initial Hazard Reticle Lock' },
+  { step: '1. Alarm Call-Point', errorRate: 5, severity: 'low', topic: 'Alarm Break-Glass Trigger' },
+  { step: '2. PPE Donning Sequence', errorRate: 24, severity: 'medium', topic: 'Dielectric / Cut-Resistant Gloves' },
+  { step: '3. Extinguisher Agent Matching', errorRate: 36, severity: 'critical', topic: 'CO2 vs Water on Electrical Fires' },
+  { step: '4. Wind & Evacuation Direction', errorRate: 14, severity: 'medium', topic: 'Upwind / Cross-Wind Safe Route' },
+  { step: '5. Muster Roll-Call Assembly', errorRate: 6, severity: 'low', topic: 'Accounting & Accountability' },
+]
+
+export const EXPIRY_ALERTS_DATA = [
+  { workerId: 'WKR-JH-8821', name: 'Rameshwar Soren', role: 'Electrician', module: 'Fire & Explosion', daysLeft: 12, status: 'urgent_refresher' },
+  { workerId: 'WKR-JH-4402', name: 'Binod Kumar Mahto', role: 'Confined Space', module: 'Gas Leak Protocol', daysLeft: 22, status: 'due_soon' },
+  { workerId: 'WKR-JH-1193', name: 'Sanjay Hembram', role: 'Welder', module: 'PPE Baseline', daysLeft: 28, status: 'due_soon' },
+  { workerId: 'WKR-JH-7731', name: 'Manoj Murmu', role: 'Machinery Operator', module: 'LOTO Safety', daysLeft: 4, status: 'urgent_refresher' },
+]
+
+export const SITE_COMPLIANCE_DATA = [
+  { site: 'Bokaro Steel City Works', trainees: 1420, certified: 1380, passRate: 97, status: 'compliant' },
+  { site: 'Dhanbad Underground Coal Block #4', trainees: 980, certified: 760, passRate: 78, status: 'refresher_needed' },
+  { site: 'Jamshedpur Heavy Engineering Complex', trainees: 1150, certified: 1060, passRate: 92, status: 'compliant' },
+  { site: 'Ranchi Mica Processing Unit', trainees: 640, certified: 510, passRate: 80, status: 'warning' },
+]

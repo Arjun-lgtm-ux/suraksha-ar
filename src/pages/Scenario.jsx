@@ -2289,6 +2289,7 @@ export default function Scenario() {
       explanation: info.explanation,
       reason: 'timeout',
       isDecisionTimeout: currentStep === 3 || !!scenario?.steps?.[currentStep]?.is_decision_step,
+      isCriticalSafetyError: currentStep === 0 || scenario?.hazard_type === 'gas_leak',
     })
   }, [currentStep, scenario, isFireScenario, getStepText, stopTimer])
 
@@ -2380,6 +2381,26 @@ export default function Scenario() {
   useEffect(() => {
     window.__handleDecisionChoice = handleDecisionChoice
   }, [handleDecisionChoice])
+
+  // ── Consequence: Restart Scenario on Critical Safety Error ──────────────
+  const handleRestartScenario = useCallback(() => {
+    stopTimer()
+    setFireEscalated(false)
+    fireEscalatedRef.current = false
+    fireAudioRef.current.setEscalated(false)
+    fireAudioRef.current.stop()
+    setConsequenceFailure(null)
+    consequenceFailureRef.current = null
+    setCurrentStep(0)
+    setTimerSeconds(getStepDuration(0))
+    setIsTimerRunning(true)
+    setStepStartTime(Date.now())
+    if (threeRef.current?.controls) {
+      const firstStep = scenario?.steps?.[0]
+      const [tx, ty, tz] = firstStep?.position || [0, 1, 0]
+      smoothLookAt(tx, ty, tz)
+    }
+  }, [scenario, stopTimer])
 
   // ── Consequence: Retry Step Handler ──────────────────────────────────────
   const handleRetryStep = useCallback(() => {
@@ -4531,28 +4552,55 @@ export default function Scenario() {
                 </button>
               </div>
             ) : (
-              <button
-                onClick={handleRetryStep}
-                style={{
-                  background: 'var(--color-brand)',
-                  color: '#FFFFFF',
-                  border: 'none',
-                  borderRadius: 12,
-                  padding: '14px 22px',
-                  fontSize: '0.98rem',
-                  fontWeight: 700,
-                  cursor: 'pointer',
-                  width: '100%',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  gap: 8,
-                  boxShadow: '0 4px 18px rgba(224, 90, 0, 0.45)',
-                }}
-              >
-                <RotateCcw size={19} />
-                <span>Retry This Step</span>
-              </button>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 10, width: '100%' }}>
+                {consequenceFailure.isCriticalSafetyError ? (
+                  <button
+                    onClick={handleRestartScenario}
+                    style={{
+                      background: 'linear-gradient(135deg, #DC2626, #B91C1C)',
+                      color: '#FFFFFF',
+                      border: 'none',
+                      borderRadius: 12,
+                      padding: '14px 22px',
+                      fontSize: '0.98rem',
+                      fontWeight: 700,
+                      cursor: 'pointer',
+                      width: '100%',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      gap: 8,
+                      boxShadow: '0 4px 18px rgba(220, 38, 38, 0.45)',
+                    }}
+                  >
+                    <RotateCcw size={19} />
+                    <span>Restart Scenario from Step 1 (Critical Error)</span>
+                  </button>
+                ) : (
+                  <button
+                    onClick={handleRetryStep}
+                    style={{
+                      background: 'var(--color-brand)',
+                      color: '#FFFFFF',
+                      border: 'none',
+                      borderRadius: 12,
+                      padding: '14px 22px',
+                      fontSize: '0.98rem',
+                      fontWeight: 700,
+                      cursor: 'pointer',
+                      width: '100%',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      gap: 8,
+                      boxShadow: '0 4px 18px rgba(224, 90, 0, 0.45)',
+                    }}
+                  >
+                    <RotateCcw size={19} />
+                    <span>Retry This Step</span>
+                  </button>
+                )}
+              </div>
             )}
           </div>
         </div>

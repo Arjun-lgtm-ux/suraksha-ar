@@ -27,7 +27,7 @@ export default function OfflineBanner() {
     return (
       <div className="offline-banner" role="alert">
         <WifiOff size={16} />
-        {T('offlineMode')} — Your progress will be saved and synced when you reconnect.
+        {T('offlineMode')} — Local encrypted storage active; works offline; synchronises when connectivity is restored.
       </div>
     )
   }

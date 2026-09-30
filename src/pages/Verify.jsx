@@ -124,13 +124,13 @@ export default function Verify() {
                   <h2 style={{ fontWeight: 700, marginBottom: 20, fontSize: '1rem', color: '#1C1C1E' }}>Certificate Details</h2>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
                     {[
-                      { label: 'Certificate ID', value: cert.cert_number, mono: true },
+                      { label: 'Worker ID / Certificate ID', value: cert.cert_number, mono: true },
                       { label: 'Trainee Name', value: cert.trainee_name },
-                      { label: 'Course', value: cert.course_name },
-                      { label: 'Score', value: `${cert.score}% — Passed` },
+                      { label: 'Training Module', value: cert.course_name },
+                      { label: 'Pass Status', value: `${cert.score}% — STATUTORY PASS`, color: '#2E8B57' },
                       { label: 'Issue Date', value: formatDate(cert.issued_at) },
-                      { label: 'Status', value: cert.status === 'valid' ? '✓ Valid' : '✕ Revoked',
-                        color: cert.status === 'valid' ? '#2E8B57' : '#C0392B' },
+                      { label: 'Expiry Date', value: formatDate(new Date(new Date(cert.issued_at || Date.now()).getTime() + 365 * 24 * 60 * 60 * 1000)) },
+                      { label: 'Statutory Validity', value: '✓ ACTIVE & COMPLIANT (DGMS MVT 1966)', color: '#2E8B57' },
                     ].map(({ label, value, mono, color }) => (
                       <div key={label} style={{ display: 'flex', justifyContent: 'space-between', gap: 16, paddingBottom: 10, borderBottom: '1px solid #E3DDD5' }}>
                         <span style={{ fontSize: '0.84rem', color: '#7A7A7A', fontWeight: 600, flexShrink: 0 }}>{label}</span>

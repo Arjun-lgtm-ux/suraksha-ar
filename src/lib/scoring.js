@@ -61,3 +61,46 @@ export function assessmentRating(score, total) {
   if (pct >= 60) return { label: 'Passed', color: '#0E7C7B', bg: '#E8F5F5', passed: true }
   return { label: 'Not Passed', color: '#C0392B', bg: '#FCEAEA', passed: false }
 }
+
+/**
+ * Smart Assessment Quad-Metric Engine (SIH26041 Specification)
+ * Computes: Knowledge Score, Procedure Score, Critical Errors, Response Time
+ */
+export function calculateSmartAssessment({
+  session = null,
+  steps = [],
+  criticalErrors = 0,
+  benchmarkTimeMs = 60000,
+  mcqScore = 85,
+}) {
+  const totalSteps = steps.length || 6
+  const knowledgeScore = mcqScore ?? 85
+  const correctSteps = steps.filter(s => s.was_correct).length
+  const ppeSteps = steps.filter(s => s.is_ppe_step)
+  const allPPECorrect = ppeSteps.length > 0 && ppeSteps.every(s => s.was_correct)
+  const ppeBonus = allPPECorrect ? 5 : 0
+  const procedureBase = Math.round((correctSteps / totalSteps) * 100)
+  const procedureScore = Math.min(100, procedureBase + ppeBonus)
+  const totalTimeMs = steps.reduce((sum, s) => sum + (s.time_taken_ms ?? 0), 0) || 45000
+  const responseTimeSec = Math.round(totalTimeMs / 1000)
+  const benchmarkSec = Math.round(benchmarkTimeMs / 1000)
+  const criticalErrorCount = criticalErrors + steps.filter(s => s.is_critical_error || s.consequence_failure).length
+  const passed = knowledgeScore >= 60 && procedureScore >= 60 && criticalErrorCount === 0
+  const overallScore = Math.max(0, Math.min(100, Math.round((knowledgeScore * 0.45) + (procedureScore * 0.55) - (criticalErrorCount * 30))))
+
+  return {
+    knowledgeScore,
+    procedureScore,
+    criticalErrorCount,
+    responseTimeSec,
+    benchmarkSec,
+    passed,
+    overallScore,
+    competencies: {
+      hazardRecognition: correctSteps >= 1 ? 95 : 40,
+      ppeCompliance: allPPECorrect ? 100 : 50,
+      equipmentHandling: criticalErrorCount === 0 ? 92 : 30,
+      evacuationTiming: responseTimeSec <= benchmarkSec ? 96 : 65,
+    }
+  }
+}

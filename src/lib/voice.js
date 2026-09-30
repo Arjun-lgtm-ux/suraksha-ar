@@ -106,7 +106,7 @@ export function stopSpeech() {
 }
 
 /** Speak text aloud using dual-engine (HD audio stream + native Web Speech API fallback) */
-export function speak(text, lang = 'en', onEnd = null) {
+export function speak(text, lang = 'en', onEnd = null, speed = 0.90) {
   if (!text) return false
   stopSpeech()
 
@@ -156,7 +156,7 @@ export function speak(text, lang = 'en', onEnd = null) {
     try {
       const utterance = new SpeechSynthesisUtterance(cleanText)
       utterance.lang = ttsLang
-      utterance.rate = 0.90
+      utterance.rate = speed || 0.90
       utterance.pitch = 1
       utterance.volume = 1
 
