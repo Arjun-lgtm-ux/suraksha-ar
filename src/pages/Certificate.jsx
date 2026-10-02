@@ -39,7 +39,7 @@ export default function Certificate() {
     try {
       const dataUrl = await toPng(certRef.current, { quality: 0.95, pixelRatio: 2 })
       const link = document.createElement('a')
-      link.download = `SurakshaAR-Certificate-${cert?.cert_number ?? 'cert'}.png`
+      link.download = `Ad-Marsal-Certificate-${cert?.cert_number ?? 'cert'}.png`
       link.href = dataUrl
       link.click()
     } catch (err) {
@@ -81,7 +81,7 @@ export default function Certificate() {
 
           {/* Certificate card — this is what gets downloaded */}
           <div ref={certRef} className="cert-card" style={{ marginBottom: 28 }}>
-            <div className="cert-watermark">SurakshaAR</div>
+            <div className="cert-watermark">Ad Marsal</div>
 
             {/* Top section */}
             <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 20 }}>

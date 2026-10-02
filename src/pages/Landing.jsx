@@ -130,24 +130,47 @@ export default function Landing() {
             Smart India Hackathon 2026 · SIH26041
           </div>
 
-          {/* Logo image */}
+          {/* Logo brand hero */}
           <div style={{
             marginBottom: lang !== 'en' ? 12 : 24,
             display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
             justifyContent: 'center',
+            gap: 10,
           }}>
             <img
-              src={`${import.meta.env.BASE_URL}images/surakshaar-logo.png`}
-              alt="SurakshaAR — Immersive Training for a Safer Bharat"
+              src={`${import.meta.env.BASE_URL}logo.png`}
+              alt="Ad Marsal — The Protective Friend"
               style={{
-                height: 'clamp(90px, 16vw, 150px)',
+                height: 'clamp(68px, 12vw, 96px)',
                 width: 'auto',
-                maxWidth: '92%',
                 objectFit: 'contain',
                 display: 'block',
-                filter: 'drop-shadow(0 4px 18px rgba(0,0,0,0.08))',
+                filter: 'drop-shadow(0 6px 20px rgba(29,78,216,0.22))',
               }}
             />
+            <div style={{ textAlign: 'center' }}>
+              <div style={{
+                fontSize: 'clamp(2.4rem, 6.5vw, 3.8rem)',
+                fontWeight: 900,
+                color: 'var(--color-brand)',
+                letterSpacing: '-0.03em',
+                lineHeight: 1.05,
+              }}>
+                Ad Marsal
+              </div>
+              <div style={{
+                fontSize: 'clamp(0.80rem, 2vw, 1.0rem)',
+                fontWeight: 700,
+                color: 'var(--color-warning)',
+                letterSpacing: '0.12em',
+                textTransform: 'uppercase',
+                marginTop: 6,
+              }}>
+                The Protective Friend · AR Vocational Safety
+              </div>
+            </div>
           </div>
 
           {/* Regional tagline for non-English users */}
@@ -710,7 +733,7 @@ export default function Landing() {
               <span>🎬</span> {T('videoTutorial') || 'Video Tutorial'}
             </div>
             <h2 style={{ fontSize: 'clamp(1.5rem, 3vw, 2.25rem)', marginBottom: 12, color: 'var(--color-text-primary)' }}>
-              {T('learnHowToUse') || 'Learn How to Use SurakshaAR'}
+              {T('learnHowToUse') || 'Learn How to Use Ad Marsal'}
             </h2>
             <p style={{ color: 'var(--color-text-muted)', maxWidth: 640, margin: '0 auto', fontSize: 'var(--text-base)', lineHeight: 1.6 }}>
               {T('learnHowToUseSubtitle') || 'Watch our complete video walkthrough to learn how to navigate the dashboard, interact with the safety assistant, scan hazards in AR, and earn verified certification.'}

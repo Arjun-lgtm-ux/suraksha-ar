@@ -24,7 +24,7 @@ const DRAWER_STRINGS = {
     adminDashboard: 'Admin Dashboard',
     myCertificates: 'My Certificates',
     tutorial: 'Tutorial / How It Works',
-    about: 'About SurakshaAR',
+    about: 'About Ad Marsal',
     faq: 'FAQ',
     contactUs: 'Contact Us',
     emergencyNumbers: 'Emergency Numbers',
@@ -49,7 +49,7 @@ const DRAWER_STRINGS = {
     adminDashboard: 'एडमिन डैशबोर्ड',
     myCertificates: 'मेरे प्रमाणपत्र',
     tutorial: 'ट्यूटोरियल / कैसे काम करता है',
-    about: 'SurakshaAR के बारे में',
+    about: 'Ad Marsal के बारे में',
     faq: 'अक्सर पूछे जाने वाले प्रश्न (FAQ)',
     contactUs: 'संपर्क करें',
     emergencyNumbers: 'आपातकालीन नंबर',
@@ -74,7 +74,7 @@ const DRAWER_STRINGS = {
     adminDashboard: 'ᱮᱰᱢᱤᱱ ᱰᱮᱥᱵᱳᱨᱰ',
     myCertificates: 'ᱤᱧᱟᱜ ᱥᱟᱨᱴᱤᱯᱷᱤᱠᱮᱴ',
     tutorial: 'ᱴᱤᱭᱩᱴᱳᱨᱤᱭᱟᱞ / ᱪᱮᱫ ᱞᱮᱠᱟ ᱠᱟᱹᱢᱤᱭᱟ',
-    about: 'SurakshaAR ᱵᱟᱵᱚᱛ',
+    about: 'Ad Marsal ᱵᱟᱵᱚᱛ',
     faq: 'ᱡᱟᱣ ᱠᱩᱠᱞᱤ (FAQ)',
     contactUs: 'ᱡᱚᱯᱲᱟᱣ ᱢᱮ',
     emergencyNumbers: 'ᱟᱯᱟᱛᱠᱟᱞᱤᱱ ᱮᱞ ᱠᱚ',
@@ -465,11 +465,21 @@ export function Navbar() {
                 gap: 8,
               }}
             >
-              <img
-                src={`${import.meta.env.BASE_URL}images/surakshaar-logo.png`}
-                alt="SurakshaAR"
-                style={{ height: 38, maxWidth: '100%', width: 'auto', objectFit: 'contain', display: 'block' }}
-              />
+              <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+                <img
+                  src={`${import.meta.env.BASE_URL}logo.png`}
+                  alt="Ad Marsal"
+                  style={{ height: 34, width: 34, objectFit: 'contain', display: 'block' }}
+                />
+                <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 1.1 }}>
+                  <span style={{ fontSize: '1.2rem', fontWeight: 900, color: 'var(--color-brand)', letterSpacing: '-0.02em' }}>
+                    Ad Marsal
+                  </span>
+                  <span style={{ fontSize: '0.58rem', fontWeight: 700, color: 'var(--color-warning)', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
+                    Protective Friend · AR
+                  </span>
+                </div>
+              </div>
               {isAdmin && (
                 <span className="badge badge-brand" style={{ fontSize: '0.65rem', marginLeft: 4 }}>ADMIN</span>
               )}
@@ -891,10 +901,18 @@ export function Navbar() {
         }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
             <img
-              src={`${import.meta.env.BASE_URL}images/surakshaar-logo.png`}
-              alt="SurakshaAR"
-              style={{ height: 36, width: 'auto', objectFit: 'contain' }}
+              src={`${import.meta.env.BASE_URL}logo.png`}
+              alt="Ad Marsal"
+              style={{ height: 32, width: 32, objectFit: 'contain' }}
             />
+            <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 1.1 }}>
+              <span style={{ fontSize: '1.15rem', fontWeight: 900, color: 'var(--color-brand)', letterSpacing: '-0.02em' }}>
+                Ad Marsal
+              </span>
+              <span style={{ fontSize: '0.56rem', fontWeight: 700, color: 'var(--color-warning)', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
+                Protective Friend · AR
+              </span>
+            </div>
           </div>
           <button
             type="button"
@@ -1313,15 +1331,16 @@ export function Navbar() {
           icon: <Info size={18} color="#0284C7" />, title: drawerT.about,
           body: (
             <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
-              <div style={{ display: 'flex', justifyContent: 'center' }}>
-                <img src={`${import.meta.env.BASE_URL}images/surakshaar-logo.png`} alt="SurakshaAR" style={{ height: 52, objectFit: 'contain' }} />
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 10 }}>
+                <img src={`${import.meta.env.BASE_URL}logo.png`} alt="Ad Marsal" style={{ height: 42, width: 42, objectFit: 'contain' }} />
+                <span style={{ fontSize: '1.4rem', fontWeight: 900, color: 'var(--color-brand)' }}>Ad Marsal</span>
               </div>
               <p style={{ margin: 0, fontSize: 'var(--text-sm)', color: 'var(--color-text-secondary)', lineHeight: 1.7 }}>
                 {lang === 'hi'
-                  ? <><strong>SurakshaAR</strong> एक AI-संचालित <strong>ऑगमेंटेड रियलिटी औद्योगिक सुरक्षा प्रशिक्षण मंच</strong> है जो SIH 2026 (समस्या विवरण SIH26041) के लिए विकसित किया गया है।</>
+                  ? <><strong>Ad Marsal (एड मार्सल)</strong> संताली भाषा के शब्दों से प्रेरित है जिसका अर्थ है <strong>"सुरक्षात्मक साथी" (The Protective Friend)</strong>। यह एक AI-संचालित <strong>ऑगमेंटेड रियलिटी औद्योगिक सुरक्षा प्रशिक्षण मंच</strong> है जो SIH 2026 (समस्या विवरण SIH26041) के लिए विकसित किया गया है।</>
                   : lang === 'sat'
-                  ? <><strong>SurakshaAR</strong> ᱫᱚ SIH 2026 (Problem Statement SIH26041) ᱞᱟᱹᱜᱤᱫ ᱵᱮᱱᱟᱣ ᱟᱠᱟᱱ AI-ᱪᱟᱹᱞᱩ <strong>Augmented Reality ᱠᱟᱹᱨᱜᱟᱲ ᱥᱩᱨᱠᱷᱟ ᱥᱤᱠᱷᱱᱟᱹᱛ ᱯᱞᱮᱴᱯᱷᱚᱨᱢ</strong> ᱠᱟᱱᱟ᱾</>
-                  : <><strong>SurakshaAR</strong> is an AI-powered <strong>Augmented Reality Industrial Safety Training Platform</strong> built for SIH 2026 (Problem Statement SIH26041).</>}
+                  ? <><strong>Ad Marsal</strong> ᱫᱚ ᱥᱟᱱᱛᱟᱲᱤ ᱟᱹᱲᱟᱹ ᱠᱷᱚᱱ ᱦᱮᱡ ᱟᱠᱟᱱᱟ, ᱡᱟᱦᱟᱸ ᱨᱮᱱᱟᱜ ᱢᱮᱱᱮᱛ ᱫᱚ <strong>"ᱨᱩᱠᱷᱤᱭᱟᱹ ᱜᱟᱛᱮ" (The Protective Friend)</strong> ᱠᱟᱱᱟ᱾ ᱱᱚᱶᱟ ᱫᱚ SIH 2026 (Problem Statement SIH26041) ᱞᱟᱹᱜᱤᱫ ᱵᱮᱱᱟᱣ ᱟᱠᱟᱱ AI-ᱪᱟᱹᱞᱩ <strong>Augmented Reality ᱠᱟᱹᱨᱜᱟᱲ ᱥᱩᱨᱠᱷᱟ ᱥᱤᱠᱷᱱᱟᱹᱛ ᱯᱞᱮᱴᱯᱷᱚᱨᱢ</strong> ᱠᱟᱱᱟ᱾</>
+                  : <><strong>Ad Marsal</strong> (from Santali, meaning <strong>"The Protective Friend"</strong>) is an AI-powered <strong>Augmented Reality Industrial Safety Training Platform</strong> built for SIH 2026 (Problem Statement SIH26041).</>}
               </p>
               <p style={{ margin: 0, fontSize: 'var(--text-sm)', color: 'var(--color-text-secondary)', lineHeight: 1.7 }}>
                 {lang === 'hi'

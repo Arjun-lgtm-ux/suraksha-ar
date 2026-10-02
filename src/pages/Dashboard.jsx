@@ -141,7 +141,7 @@ export default function Dashboard() {
               </div>
               <div>
                 <h3 style={{ fontSize: 'var(--text-base, 1rem)', fontWeight: 700, margin: 0, color: 'var(--color-text-primary)' }}>
-                  {T('howToUse') || 'How to Use SurakshaAR?'}
+                  {T('howToUse') || 'How to Use Ad Marsal?'}
                 </h3>
                 <p style={{ fontSize: 'var(--text-xs, 0.8rem)', color: 'var(--color-text-secondary)', margin: '2px 0 0' }}>
                   First time training? Watch the 2-minute video tutorial before starting AR simulation.

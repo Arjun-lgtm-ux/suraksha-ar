@@ -13,14 +13,14 @@ export function Footer() {
       platform: 'Platform',
       connect: 'Connect',
       language: 'Language',
-      about: 'Know About SurakshaAR',
+      about: 'Know About Ad Marsal',
       contact: 'Contact Us',
       privacy: 'Privacy Policy',
       terms: 'Terms & Conditions',
       copyright: 'Copyright Policy',
       safetyTips: 'Safety Tips',
-      instagram: 'Instagram: @surakshaaar',
-      rights: '© 2026 SurakshaAR. All Rights Reserved.',
+      instagram: 'Instagram: @ad_marsal_ar',
+      rights: '© 2026 Ad Marsal. All Rights Reserved.',
       privacyShort: 'Privacy',
       termsShort: 'Terms',
       copyrightShort: 'Copyright',
@@ -32,14 +32,14 @@ export function Footer() {
       platform: 'प्लेटफ़ॉर्म',
       connect: 'संपर्क सूत्र',
       language: 'भाषा',
-      about: 'SurakshaAR के बारे में जानें',
+      about: 'Ad Marsal के बारे में जानें',
       contact: 'संपर्क करें',
       privacy: 'गोपनीयता नीति',
       terms: 'नियम एवं शर्तें',
       copyright: 'कॉपीराइट नीति',
       safetyTips: 'सुरक्षा टिप्स',
-      instagram: 'इंस्टाग्राम: @surakshaaar',
-      rights: '© 2026 SurakshaAR. सर्वाधिकार सुरक्षित।',
+      instagram: 'इंस्टाग्राम: @ad_marsal_ar',
+      rights: '© 2026 Ad Marsal. सर्वाधिकार सुरक्षित।',
       privacyShort: 'गोपनीयता',
       termsShort: 'शर्तें',
       copyrightShort: 'कॉपीराइट',
@@ -51,14 +51,14 @@ export function Footer() {
       platform: 'ᱯᱞᱮᱴᱯᱷᱳᱨᱢ',
       connect: 'ᱡᱚᱯᱲᱟᱣ',
       language: 'ᱯᱟᱹᱨᱥᱤ',
-      about: 'SurakshaAR ᱵᱟᱵᱚᱛ ᱵᱟᱰᱟᱭ ᱢᱮ',
+      about: 'Ad Marsal ᱵᱟᱵᱚᱛ ᱵᱟᱰᱟᱭ ᱢᱮ',
       contact: 'ᱡᱚᱯᱲᱟᱣ ᱢᱮ',
       privacy: 'ᱫᱟᱱᱟᱝ ᱱᱤᱭᱟᱹᱢ (Privacy)',
       terms: 'ᱱᱤᱭᱟᱹᱢ ᱟᱨ ᱥᱚᱨᱛ (Terms)',
       copyright: 'ᱠᱚᱯᱤᱨᱟᱭᱤᱴ ᱱᱤᱭᱟᱹᱢ',
       safetyTips: 'ᱥᱩᱨᱠᱷᱟ ᱴᱤᱯᱥ',
-      instagram: 'ᱤᱱᱥᱴᱟᱜᱨᱟᱢ: @surakshaaar',
-      rights: '© ᱒᱐᱒᱖ SurakshaAR. ᱡᱚᱛᱚ ᱟᱹᱭᱫᱟᱹᱨᱤ ᱫᱚᱦᱚ ᱮᱱᱟ᱾',
+      instagram: 'ᱤᱱᱥᱴᱟᱜᱨᱟᱢ: @ad_marsal_ar',
+      rights: '© ᱒᱐᱒᱖ Ad Marsal. ᱡᱚᱛᱚ ᱟᱹᱭᱫᱟᱹᱨᱤ ᱫᱚᱦᱚ ᱮᱱᱟ᱾',
       privacyShort: 'ᱫᱟᱱᱟᱝ',
       termsShort: 'ᱥᱚᱨᱛ',
       copyrightShort: 'ᱠᱚᱯᱤᱨᱟᱭᱤᱴ',
@@ -103,11 +103,18 @@ export function Footer() {
           <div style={{ maxWidth: 360, minWidth: 260, flex: '1 1 280px' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 12 }}>
               <img
-                src={`${import.meta.env.BASE_URL}images/surakshaar-logo.png`}
-                alt="SurakshaAR Logo"
-                style={{ height: 32, width: 'auto', objectFit: 'contain' }}
-                onError={(e) => { e.currentTarget.style.display = 'none' }}
+                src={`${import.meta.env.BASE_URL}logo.png`}
+                alt="Ad Marsal"
+                style={{ height: 32, width: 32, objectFit: 'contain' }}
               />
+              <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 1.1 }}>
+                <span style={{ fontSize: '1.25rem', fontWeight: 900, color: 'var(--color-brand)', letterSpacing: '-0.02em' }}>
+                  Ad Marsal
+                </span>
+                <span style={{ fontSize: '0.62rem', fontWeight: 700, color: 'var(--color-warning)', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
+                  The Protective Friend · AR
+                </span>
+              </div>
             </div>
             <p
               style={{

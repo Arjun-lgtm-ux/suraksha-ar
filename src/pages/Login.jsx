@@ -118,19 +118,25 @@ export default function Login() {
       }}>
         <div style={{ width: '100%', maxWidth: 420 }}>
           <div style={{ textAlign: 'center', marginBottom: 32 }}>
-            <Link to="/" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', marginBottom: 16 }}>
+            <Link to="/" style={{ display: 'inline-flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', marginBottom: 16, textDecoration: 'none' }}>
               <img
-                src={`${import.meta.env.BASE_URL}images/surakshaar-logo.png`}
-                alt="SurakshaAR"
+                src={`${import.meta.env.BASE_URL}logo.png`}
+                alt="Ad Marsal"
                 style={{
-                  height: 60,
-                  width: 'auto',
-                  maxWidth: 260,
+                  height: 58,
+                  width: 58,
                   objectFit: 'contain',
                   display: 'block',
-                  filter: 'drop-shadow(0 4px 16px rgba(224, 90, 0, 0.15))',
+                  filter: 'drop-shadow(0 4px 16px rgba(29, 78, 216, 0.2))',
+                  marginBottom: 8,
                 }}
               />
+              <span style={{ fontSize: '1.6rem', fontWeight: 900, color: 'var(--color-brand)', letterSpacing: '-0.02em' }}>
+                Ad Marsal
+              </span>
+              <span style={{ fontSize: '0.72rem', fontWeight: 700, color: 'var(--color-warning)', letterSpacing: '0.1em', textTransform: 'uppercase' }}>
+                The Protective Friend · AR
+              </span>
             </Link>
             <h1 style={{ fontSize: 'var(--text-2xl)', fontWeight: 800, marginBottom: 6 }}>Welcome Back</h1>
             <p style={{ color: 'var(--color-text-muted)', fontSize: 'var(--text-sm)' }}>

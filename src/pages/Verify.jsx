@@ -83,12 +83,12 @@ export default function Verify() {
       }}>
         <img
           src={`${import.meta.env.BASE_URL}logo.png`}
-          alt="Suraksha AR"
+          alt="Ad Marsal"
           style={{ width: 36, height: 36, objectFit: 'contain' }}
         />
         <div>
-          <div style={{ fontWeight: 800, fontSize: '1rem', color: '#1C1C1E' }}>SurakshaAR</div>
-          <div style={{ fontSize: '0.72rem', color: '#7A7A7A', fontWeight: 600 }}>Certificate Verification</div>
+          <div style={{ fontWeight: 800, fontSize: '1rem', color: '#1C1C1E' }}>Ad Marsal</div>
+          <div style={{ fontSize: '0.72rem', color: '#7A7A7A', fontWeight: 600 }}>Certificate Verification · The Protective Friend</div>
         </div>
       </header>
 

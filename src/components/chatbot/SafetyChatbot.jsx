@@ -43,34 +43,34 @@ const WELCOME_MESSAGES = {
   en: {
     id: 'welcome-en',
     role: 'assistant',
-    content: "👷 Johar! I am **Suraksha Mitra**, your AI safety-training assistant for mining and manufacturing in Jharkhand.\n\nAsk me about PPE gear, blast hazards, machinery safety, LOTO protocols, or any AR training module in this app!\n\n🎙️ *Tip: You can also tap the Mic to speak in English, Hindi, or Hinglish.*",
-    source: 'Suraksha Mitra AI',
+    content: "👷 Johar! I am **Marsal Mitra**, your AI safety-training companion on **Ad Marsal** (The Protective Friend) for mining and industrial safety in Jharkhand.\n\nAsk me about PPE gear, blast hazards, machinery safety, LOTO protocols, or any AR training module in this app!\n\n🎙️ *Tip: You can also tap the Mic to speak in English, Hindi, or Hinglish.*",
+    source: 'Marsal Mitra AI · Ad Marsal',
   },
   hi: {
     id: 'welcome-hi',
     role: 'assistant',
-    content: "👷 जोहार! मैं **सुरक्षा मित्र** हूँ, झारखंड के खनन एवं औद्योगिक श्रमिकों के लिए आपका AI सुरक्षा-प्रशिक्षण साथी।\n\nमुझसे PPE किट, गैस रिसाव, खदान के खतरों, मशीनरी सेफ्टी, LOTO नियमों या इस ऐप के AR मॉड्यूल के बारे में पूछें!\n\n🎙️ *माइक बटन दबाकर आप बोलकर भी सवाल पूछ सकते हैं।*",
-    source: 'सुरक्षा मित्र AI',
+    content: "👷 जोहार! मैं **मार्सल मित्र (Marsal Mitra)** हूँ, **Ad Marsal** पर झारखंड के खनन एवं औद्योगिक श्रमिकों के लिए आपका AI सुरक्षा-प्रशिक्षण साथी।\n\nमुझसे PPE किट, गैस रिसाव, खदान के खतरों, मशीनरी सेफ्टी, LOTO नियमों या इस ऐप के AR मॉड्यूल के बारे में पूछें!\n\n🎙️ *माइक बटन दबाकर आप बोलकर भी सवाल पूछ सकते हैं।*",
+    source: 'मार्सल मित्र AI · Ad Marsal',
   },
   hinglish: {
     id: 'welcome-hinglish',
     role: 'assistant',
-    content: "👷 Johar! Main hoon **Suraksha Mitra**, Jharkhand ke mining aur manufacturing workers ka AI safety assistant.\n\nAap mujhse PPE kit, mine hazards, gas leak, machine safety, LOTO rules ya is app ke AR modules ke baare mein kuch bhi pooch sakte hain!\n\n🎙️ *Aap Mic daba kar bolkar bhi pooch sakte hain!*",
-    source: 'Suraksha Mitra AI',
+    content: "👷 Johar! Main hoon **Marsal Mitra**, **Ad Marsal** par Jharkhand ke mining aur manufacturing workers ka AI safety companion.\n\nAap mujhse PPE kit, mine hazards, gas leak, machine safety, LOTO rules ya is app ke AR modules ke baare mein kuch bhi pooch sakte hain!\n\n🎙️ *Aap Mic daba kar bolkar bhi pooch sakte hain!*",
+    source: 'Marsal Mitra AI · Ad Marsal',
   },
   sat: {
     id: 'welcome-sat',
     role: 'assistant',
-    content: "👷 ᱡᱚᱦᱟᱨ! ᱤᱧ ᱫᱚ **ᱥᱩᱨᱠᱷᱟ ᱢᱤᱛᱨᱚ** (Suraksha Mitra) ᱠᱟᱹᱱᱟᱹᱧ᱾ ᱠᱷᱟᱫᱟᱱ ᱟᱨ ᱠᱟᱹᱨᱜᱟᱲ ᱨᱮᱱᱟᱜ ᱨᱩᱠᱷᱤᱭᱟᱹ, PPE ᱥᱟᱢᱟᱱ ᱟᱨ AR ᱴᱨᱮᱱᱤᱝ ᱵᱟᱵᱚᱛ ᱤᱧ ᱠᱩᱞᱤ ᱫᱟᱲᱮᱭᱟᱹᱧᱟ᱾",
-    source: 'ᱥᱩᱨᱠᱷᱟ ᱢᱤᱛᱨᱚ AI',
+    content: "👷 ᱡᱚᱦᱟᱨ! ᱤᱧ ᱫᱚ **ᱢᱟᱨᱥᱟᱞ ᱢᱤᱛᱨᱚ** (Marsal Mitra) ᱠᱟᱹᱱᱟᱹᱧ — **Ad Marsal** (ᱨᱩᱠᱷᱤᱭᱟᱹ ᱜᱟᱛᱮ) ᱨᱮ ᱟᱢᱟᱜ AI ᱥᱩᱨᱠᱷᱟ ᱜᱟᱛᱮ᱾ ᱠᱷᱟᱫᱟᱱ ᱟᱨ ᱠᱟᱹᱨᱜᱟᱲ ᱨᱮᱱᱟᱜ ᱨᱩᱠᱷᱤᱭᱟᱹ, PPE ᱥᱟᱢᱟᱱ ᱟᱨ AR ᱴᱨᱮᱱᱤᱝ ᱵᱟᱵᱚᱛ ᱤᱧ ᱠᱩᱞᱤ ᱫᱟᱲᱮᱭᱟᱹᱧᱟ᱾",
+    source: 'ᱢᱟᱨᱥᱟᱞ ᱢᱤᱛᱨᱚ AI',
   },
 }
 
 const PLACEHOLDERS = {
-  en: 'Ask Suraksha Mitra about safety, PPE, mining...',
-  hi: 'सुरक्षा मित्र से सुरक्षा, PPE, खनन के बारे में पूछें...',
-  hinglish: 'Suraksha Mitra se safety, PPE, mining ke baare mein poochein...',
-  sat: 'ᱥᱩᱨᱠᱷᱟ ᱢᱤᱛᱨᱚ ᱴᱷᱮᱱ ᱠᱩᱞᱤᱭ ᱢᱮ…',
+  en: 'Ask Marsal Mitra about safety, PPE, mining...',
+  hi: 'मार्सल मित्र से सुरक्षा, PPE, खनन के बारे में पूछें...',
+  hinglish: 'Marsal Mitra se safety, PPE, mining ke baare mein poochein...',
+  sat: 'ᱢᱟᱨᱥᱟᱞ ᱢᱤᱛᱨᱚ ᱴᱷᱮᱱ ᱠᱩᱞᱤᱭ ᱢᱮ…',
 }
 
 const STORAGE_KEY = 'suraksha_mitra_chat_history'
@@ -651,7 +651,7 @@ export default function SafetyChatbot() {
               Aapka Apna
             </span>
             <span style={{ color: 'var(--color-brand)', fontSize: '0.84rem', fontWeight: 800, letterSpacing: '-0.01em' }}>
-              Suraksha Mitra
+              Marsal Mitra
             </span>
           </div>
 
@@ -683,7 +683,7 @@ export default function SafetyChatbot() {
       {/* Floating launcher button */}
       <button
         onClick={open ? handleClose : handleOpen}
-        aria-label="Suraksha Mitra AI Assistant"
+        aria-label="Marsal Mitra AI Assistant"
         style={{
           position: 'fixed',
           bottom: 'calc(18px + env(safe-area-inset-bottom, 0px))',
@@ -746,7 +746,7 @@ export default function SafetyChatbot() {
               <div style={{ flex: 1, minWidth: 0 }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
                   <p style={{ color: 'white', fontWeight: 800, fontSize: '0.96rem', lineHeight: 1.2 }}>
-                    Suraksha Mitra
+                    Marsal Mitra
                   </p>
                   <span style={{
                     fontSize: '0.62rem',
